@@ -1,0 +1,9 @@
+[
+  { "code": "01", "name": "Ain" },
+  { "code": "02", "name": "Aisne" },
+  { "code": "75", "name": "Paris" },
+  { "code": "13", "name": "Bouches-du-Rhône" },
+  { "code": "69", "name": "Rhône" },
+  { "code": "59", "name": "Nord" },
+  { "code": "44", "name": "Loire-Atlantique" }
+]

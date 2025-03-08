@@ -1,0 +1,90 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[13].use[5]!./app/page.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.progress-bar {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.form-step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-step-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.input-text,
+.input-file {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-text:focus {
+  border-color: #6200ea;
+  box-shadow: 0px 0px 4px rgba(98, 0, 234, 0.3);
+}
+
+.btn-next,
+.btn-prev,
+.btn-complete {
+  background-color: #6200ea;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-next:hover,
+.btn-prev:hover {
+  background-color: #3700b3;
+}
+
+.btn-prev {
+  background-color: #aaa;
+  margin-right: 10px;
+}
+
+.btn-complete {
+  background-color: #21bb19;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}

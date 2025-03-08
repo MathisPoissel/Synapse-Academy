@@ -1,0 +1,28 @@
+{
+  "name": "auto-complete-cv",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ai-sdk/groq": "^1.0.6",
+    "ai": "^4.0.12",
+    "dotenv": "^16.4.5",
+    "firebase": "^11.1.0",
+    "formidable": "^3.5.2",
+    "framer-motion": "^11.3.6",
+    "lenis": "^1.1.6",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-intersection-observer": "^9.13.0",
+    "split-type": "^0.3.4"
+  },
+  "devDependencies": {
+    "sass": "^1.77.6"
+  }
+}

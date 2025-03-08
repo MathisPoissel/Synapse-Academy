@@ -1,0 +1,51 @@
+/*** Variables ***/
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("/fonts/custom-font.woff2") format("woff2"),
+    url("/fonts/custom-font.woff") format("woff"),
+    url("/fonts/custom-font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Fonts
+:root {
+  --font-primary: "CustomFont, sans-serif";
+  --font-secondary: "Arial, serif";
+
+  // Colors
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+
+  --color-white: #f8f8ff; // Ghost White
+  --color-black: #101720; // Midnight Blue
+
+  --color-danger: #92354c;
+  --color-success: #65a27d;
+  --color-warning: #9e673e;
+  --color-info: #308a89;
+
+  // Font Sizes
+  --font-size-h1: clamp(2.75rem, 6vw, 3.5rem);
+  --font-size-h2: clamp(2rem, 4.5vw, 2.5rem);
+  --font-size-h3: clamp(1.75rem, 4vw, 2rem);
+  --font-size-h4: clamp(1.5rem, 3.4vw, 1.75rem);
+  --font-size-h5: clamp(1.25rem, 2.8vw, 1.65rem);
+
+  --font-size-p: clamp(1rem, 2.4vw, 1.5rem);
+  --font-size-small: clamp(0.875rem, 1.5vw, 1.125rem);
+  --font-size-caption: clamp(0.75rem, 1.2vw, 1rem);
+
+  // Font Weights
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  // Breakpoints
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+}
