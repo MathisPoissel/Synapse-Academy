@@ -1,0 +1,59 @@
+.sideBarDashboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  color: #333;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-right: 1px solid #eaeaea;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content ul li {
+  margin: 10px 0;
+}
+
+.content ul li a {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.content ul li a:hover {
+  color: #0366d6;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom a {
+  color: #0070f3;
+  text-decoration: none;
+  margin: 5px 0;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.bottom a:hover {
+  color: #0366d6;
+}

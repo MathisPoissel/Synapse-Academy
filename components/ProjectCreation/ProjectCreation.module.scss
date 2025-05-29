@@ -1,0 +1,253 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.form {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.stepsIndicator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stepButton {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    opacity: 0.7;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+      opacity: 1;
+      background-color: rgba(6, 53, 205, 0.2);
+      font-weight: 600;
+
+      .stepNumber {
+        background-color: var(--color-blue);
+        color: white;
+      }
+    }
+
+    &.completed {
+      opacity: 0.9;
+
+      .stepNumber {
+        background-color: rgba(6, 53, 205, 0.6);
+        color: white;
+      }
+    }
+
+    .stepNumber {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin-right: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .stepName {
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.section {
+  margin-bottom: 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  border-left: 4px solid var(--color-blue);
+  padding-left: 0.75rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--input-background);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--input-background);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+.button {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.85rem 1.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+
+  &:hover {
+    background: var(--primary-color-dark);
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    background: var(--disabled-color);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.fileUpload {
+  border: 2px dashed var(--border-color);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  background: var(--input-background);
+  color: var(--text-color);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 3px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.successMessage {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(22, 163, 74, 0.2);
+  border-radius: 8px;
+  color: #22c55e;
+  font-weight: 500;
+  text-align: center;
+}
+
+.errorMessage {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(220, 38, 38, 0.2);
+  border-radius: 8px;
+  color: #ef4444;
+  font-weight: 500;
+  text-align: center;
+}

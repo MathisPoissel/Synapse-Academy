@@ -11,15 +11,6 @@ export default function UserProfileIcon() {
   const { user, loading } = useAuth();
   const [firestoreUser, setFirestoreUser] = useState(null);
 
-  const handleLogout = async () => {
-    try {
-      await auth.signOut();
-      console.log("Déconnexion réussie.");
-    } catch (error) {
-      console.error("Erreur lors de la déconnexion :", error);
-    }
-  };
-
   useEffect(() => {
     const fetchFirestoreUser = async () => {
       if (user) {
@@ -57,9 +48,6 @@ export default function UserProfileIcon() {
           {firestoreUser?.lastLoginAt?.toDate().toLocaleString()}
         </p>
         <Link href={"/profile/edit"}>Editer</Link>
-        <button className={styles.logoutButton} onClick={handleLogout}>
-          Se déconnecter
-        </button>
       </div>
     </div>
   );

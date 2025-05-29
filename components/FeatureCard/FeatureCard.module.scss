@@ -1,0 +1,42 @@
+// components/FeatureCard/FeatureCard.module.scss
+.featureCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .iconWrapper {
+    background: linear-gradient(
+      135deg,
+      rgba(11, 53, 205, 0.2) 0%,
+      rgba(11, 53, 205, 0.05) 100%
+    );
+    width: 70px;
+    height: 70px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  p {
+    color: var(--color-primary);
+    opacity: 0.8;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}

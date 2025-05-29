@@ -1,0 +1,104 @@
+// components/ProfileForm/ProfileForm.module.scss
+.formContainer {
+  padding: 2rem;
+}
+
+.stepsIndicator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stepButton {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    opacity: 0.7;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+      opacity: 1;
+      background-color: rgba(6, 53, 205, 0.2);
+      font-weight: 600;
+
+      .stepNumber {
+        background-color: var(--color-blue);
+        color: white;
+      }
+    }
+
+    &.completed {
+      opacity: 0.9;
+
+      .stepNumber {
+        background-color: rgba(6, 53, 205, 0.6);
+        color: white;
+      }
+    }
+
+    .stepNumber {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin-right: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .stepName {
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.formStep {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 2rem;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.successMessage {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(22, 163, 74, 0.2);
+  border-radius: 8px;
+  color: #22c55e;
+  font-weight: 500;
+  text-align: center;
+}
+
+.errorMessage {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(220, 38, 38, 0.2);
+  border-radius: 8px;
+  color: #ef4444;
+  font-weight: 500;
+  text-align: center;
+}

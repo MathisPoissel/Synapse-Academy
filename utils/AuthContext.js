@@ -1,9 +1,10 @@
+// utils/AuthContext.js (modification)
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase.config";
-import { db } from "../firebase.config"; // Import correct de Firestore
-import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore"; // Firestore utilities
+import { db } from "../firebase.config";
+import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 
 // Crée le contexte
 const AuthContext = createContext(null);
@@ -14,22 +15,36 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const cachedUser = sessionStorage.getItem("user");
+    if (cachedUser) {
+      setUser(JSON.parse(cachedUser));
+      setLoading(false);
+      return;
+    }
+
     const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
       if (currentUser) {
-        // Synchronise l'utilisateur avec Firestore
-        await syncUserWithFirestore(currentUser);
+        const userWithProfile = await syncUserWithFirestore(currentUser);
+        sessionStorage.setItem("user", JSON.stringify(userWithProfile));
+        setUser(userWithProfile);
+      } else {
+        setUser(null);
       }
-      setUser(currentUser || null);
-      setLoading(false); // Charge terminé
+      setLoading(false);
     });
 
-    return () => unsubscribe(); // Nettoyage lors du démontage
+    return () => unsubscribe();
   }, []);
 
   // Fonction pour synchroniser l'utilisateur avec Firestore
   const syncUserWithFirestore = async (currentUser) => {
-    const userRef = doc(db, "users", currentUser.uid); // Utilisation de db
+    const userRef = doc(db, "users", currentUser.uid);
     const userDoc = await getDoc(userRef);
+
+    let userData = {
+      ...currentUser,
+      isProfileComplete: false,
+    };
 
     if (!userDoc.exists()) {
       // Si l'utilisateur n'existe pas dans Firestore, on le crée
@@ -41,19 +56,35 @@ export function AuthProvider({ children }) {
         createdAt: serverTimestamp(),
         lastLoginAt: serverTimestamp(),
         role: "user",
+        isProfileComplete: false,
       });
     } else {
       // Si l'utilisateur existe déjà, on met à jour `lastLoginAt`
       await setDoc(
         userRef,
         { lastLoginAt: serverTimestamp() },
-        { merge: true } // Met à jour uniquement les champs nécessaires
+        { merge: true }
       );
+
+      // Récupérer l'état de complétion du profil
+      userData = {
+        ...currentUser,
+        isProfileComplete: userDoc.data().isProfileComplete || false,
+      };
     }
+
+    return userData;
+  };
+
+  const logout = () => {
+    auth.signOut().then(() => {
+      setUser(null);
+      sessionStorage.removeItem("user");
+    });
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading }}>
+    <AuthContext.Provider value={{ user, loading, logout }}>
       {children}
     </AuthContext.Provider>
   );

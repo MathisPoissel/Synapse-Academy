@@ -1,0 +1,60 @@
+// components/ProfileCompletionBanner/ProfileCompletionBanner.module.scss
+.banner {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 53, 205, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 100%
+  );
+  border-bottom: 1px solid rgba(6, 53, 205, 0.2);
+  padding: 0.75rem 0;
+}
+
+.bannerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-primary);
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--color-blue);
+  }
+}
+
+.actionButton {
+  background-color: var(--color-blue);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(6, 53, 205, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
