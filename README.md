@@ -1,1 +1,1 @@
-# PFE
+# Synapse Academy
