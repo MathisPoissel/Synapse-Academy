@@ -178,14 +178,6 @@ export default function Home() {
                 description="Communauté d'étudiants motivés, cadre positif, sans jugement."
               />
             </div>
-            <div className={styles.featuresImage}>
-              <Image
-                src="/images/collaboration-illustration.svg"
-                alt="Étudiants collaborant sur des projets"
-                width={800}
-                height={400}
-              />
-            </div>
           </div>
         </section>
 
@@ -198,19 +190,19 @@ export default function Home() {
             </div>
             <div className={styles.testimonialGrid}>
               <TestimonialCard
-                image="/images/testimonials/lea.jpg"
+                image="/images/testimonials/lea.png"
                 name="Léa"
                 program="étudiante en design"
                 quote="Grâce à Synapse Academy, j'ai pu rejoindre un projet qui correspond parfaitement à mes compétences et mes valeurs."
               />
               <TestimonialCard
-                image="/images/testimonials/thomas.jpg"
+                image="/images/testimonials/thomas.png"
                 name="Thomas"
                 program="étudiant en développement web"
                 quote="J'ai pu constituer une équipe pluridisciplinaire en moins d'une semaine pour mon projet de fin d'études."
               />
               <TestimonialCard
-                image="/images/testimonials/sarah.jpg"
+                image="/images/testimonials/sarah.png"
                 name="Sarah"
                 program="étudiante en marketing"
                 quote="La plateforme est intuitive et la communauté est vraiment accueillante. Exactement ce dont j'avais besoin !"

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import styles from "./page.module.scss";
 import { getProfileById } from "../../../utils/firebaseHelpers";
 import Header from "../../../components/Header/Header";
+import Footer from "components/Footer/Footer";
 
 export default async function ProfilePage({ params }) {
   const profile = await getProfileById(params.id);
@@ -246,6 +247,7 @@ export default async function ProfilePage({ params }) {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

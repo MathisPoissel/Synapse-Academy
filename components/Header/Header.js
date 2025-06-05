@@ -44,7 +44,7 @@ const Header = () => {
           <div className={styles.logoContainer}>
             <Link href="/" className={styles.logo}>
               <Image
-                src="/logo.png"
+                src="/images/logo.png"
                 alt="Logo Student Connect"
                 width={120}
                 height={40}

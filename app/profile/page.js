@@ -8,6 +8,8 @@ import { db } from "../../firebase.config";
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import ProfileForm from "../../components/ProfileForm/ProfileForm";
 import styles from "./page.module.scss";
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
 
 const ProfilePage = () => {
   const { user, loading } = useAuth();
@@ -120,27 +122,31 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className={styles.profilePage}>
-      <div className={styles.profileContainer}>
-        <div className={styles.pageHeader}>
-          <h1>Mon Profil</h1>
-          <p>
-            Complétez votre profil pour vous connecter avec d'autres étudiants
-            et rejoindre des projets passionnants.
-          </p>
-        </div>
+    <>
+      <Header />
+      <div className={styles.profilePage}>
+        <div className={styles.profileContainer}>
+          <div className={styles.pageHeader}>
+            <h1>Mon Profil</h1>
+            <p>
+              Complétez votre profil pour vous connecter avec d'autres étudiants
+              et rejoindre des projets passionnants.
+            </p>
+          </div>
 
-        {userData && (
-          <ProfileForm
-            initialValues={{
-              ...defaultProfile,
-              ...userData,
-            }}
-            onSave={handleSaveProfile}
-          />
-        )}
+          {userData && (
+            <ProfileForm
+              initialValues={{
+                ...defaultProfile,
+                ...userData,
+              }}
+              onSave={handleSaveProfile}
+            />
+          )}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

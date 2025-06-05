@@ -83,20 +83,25 @@ export default function About() {
         <section className={styles.section}>
           <div className="container">
             <div className={styles.sectionHeader}>
-              <span className={styles.sectionTag}>L'équipe</span>
-              <h2>Des étudiants comme toi</h2>
-              <p>
-                Nous sommes une petite équipe d'étudiants passionnés par
-                l'entrepreneuriat, la tech, l'éducation et l'impact positif.
-                Synapse Academy, c’est notre réponse à un besoin que nous avons
-                ressenti nous-mêmes.
-              </p>
-              <Image
-                src="/images/team-illustration.svg"
-                alt="Illustration de l'équipe"
-                width={700}
-                height={350}
-              />
+              <div className={styles.teamSection}>
+                <div>
+                  <span className={styles.sectionTag}>L'équipe</span>
+                  <h2>Des étudiants comme toi</h2>
+                  <p>
+                    Nous sommes une petite équipe passionnés par
+                    l'entrepreneuriat, la tech, l'éducation et l'impact positif.
+                    Synapse Academy, c’est notre réponse à un besoin que nous
+                    avions ressenti nous-mêmes.
+                  </p>
+                </div>
+                <Image
+                  className={styles.illustration}
+                  src="/images/team-illustration.jpg"
+                  alt="Illustration de l'équipe"
+                  width={700}
+                  height={350}
+                />
+              </div>
             </div>
           </div>
         </section>
