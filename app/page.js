@@ -35,7 +35,7 @@ export default function Home() {
                 </p>
                 <Button
                   variant="primary"
-                  href="/community"
+                  href="/etudiants"
                   aria-label="Découvrir la communauté Synapse Academy"
                 >
                   Découvrir la communauté
@@ -139,7 +139,7 @@ export default function Home() {
                 </div>
                 <Button
                   variant="secondary"
-                  href="/projects"
+                  href="/projet"
                   aria-label="Parcourir les projets disponibles"
                 >
                   Parcourir les projets
@@ -222,7 +222,7 @@ export default function Home() {
               </p>
               <Button
                 variant="primary"
-                href="/signup"
+                href="/login"
                 size="large"
                 aria-label="S'inscrire sur Synapse Academy"
               >

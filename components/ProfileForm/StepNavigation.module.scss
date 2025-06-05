@@ -8,6 +8,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   margin-bottom: 1.5rem;
+  overflow: hidden;
 
   .progressBar {
     height: 100%;
@@ -27,11 +28,12 @@
   gap: 1rem;
 
   button {
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.75rem;
     border-radius: 8px;
     font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 
     &:disabled {
       opacity: 0.6;
@@ -40,12 +42,13 @@
   }
 
   .prevButton {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--color-primary);
-    border: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
     &:hover:not(:disabled) {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
     }
   }
 
@@ -55,8 +58,9 @@
     border: none;
 
     &:hover:not(:disabled) {
+      background-color: var(--color-purple);
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(6, 53, 205, 0.3);
+      box-shadow: 0 4px 12px rgba(11, 53, 205, 0.2);
     }
 
     &:active:not(:disabled) {
@@ -72,11 +76,11 @@
     );
     color: white;
     border: none;
-    padding: 0.75rem 2rem;
+    padding: 0.85rem 2rem;
 
     &:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(6, 53, 205, 0.3);
+      box-shadow: 0 4px 12px rgba(11, 53, 205, 0.2);
     }
 
     &:active:not(:disabled) {

@@ -47,7 +47,7 @@ export default function UserProfileIcon() {
           Dernière connexion :{" "}
           {firestoreUser?.lastLoginAt?.toDate().toLocaleString()}
         </p>
-        <Link href={"/profile/edit"}>Editer</Link>
+        <Link href={"/profile"}>Editer</Link>
       </div>
     </div>
   );

@@ -28,31 +28,16 @@ const Footer = () => {
               <h3>Navigation</h3>
               <ul>
                 <li>
-                  <Link href="/">Accueil</Link>
+                  <Link href="/a-propos">À Propos</Link>
                 </li>
                 <li>
-                  <Link href="/match">Match</Link>
+                  <Link href="/projets">Projets</Link>
                 </li>
                 <li>
                   <Link href="/etudiants">Étudiants</Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className={styles.linkColumn}>
-              <h3>Ressources</h3>
-              <ul>
-                <li>
-                  <Link href="/faq">FAQ</Link>
-                </li>
-                <li>
-                  <Link href="/comment-ca-marche">Comment ça marche</Link>
-                </li>
-                <li>
-                  <Link href="/projets">Projets</Link>
                 </li>
               </ul>
             </div>
